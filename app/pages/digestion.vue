@@ -23,6 +23,22 @@
           <DigestionDigestiveTractTable />
         </v-expansion-panel-text>
       </v-expansion-panel>
+
+      <v-expansion-panel>
+        <v-expansion-panel-title>
+          <v-row density="comfortable">
+            <v-col
+              class="d-flex justify-start"
+              cols="4"
+            >
+              Digestive Enzymes
+            </v-col>
+          </v-row>
+        </v-expansion-panel-title>
+        <v-expansion-panel-text>
+          <DigestionDigestiveEnzymesTable />
+        </v-expansion-panel-text>
+      </v-expansion-panel>
     </v-expansion-panels>
   </v-container>
 </template>

@@ -24,6 +24,10 @@ const giTract = [
     desc: "Mechanical breakdown, moistening, and mixing of food with saliva",
   },
   {
+    name: "Pharynx",
+    desc: "Propels food from the back of the oral cavity into the esophagus",
+  },
+  {
     name: "Esophagus",
     desc: "Transports food from the pharynx to the stomach",
   },
