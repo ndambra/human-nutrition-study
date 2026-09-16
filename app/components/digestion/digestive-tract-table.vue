@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+const headers = [
+  { title: "Organ", value: "name" },
+  { title: "Description", value: "desc" },
+];
 const accessoryOrgans = [
   {
     name: "Salivary glands",
@@ -49,46 +53,41 @@ const giTract = [
 <template>
   <v-container>
     <h2>Accessory Organs</h2>
-    <v-table
-      striped="even"
-      class="mb-8"
+    <v-data-table
+      :items="accessoryOrgans"
+      :headers="headers"
+      hide-default-footer
     >
-      <thead>
+      <template #headers="{ columns }">
         <tr>
-          <th class="text-left">Organ</th>
-          <th class="text-left">Description</th>
+          <template v-for="column in columns" :key="column.title">
+            <th>
+              <span class="text-primary font-weight-bold text-uppercase">
+                {{ column.title }}
+              </span>
+            </th>
+          </template>
         </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="organ in accessoryOrgans"
-          :key="organ.name"
-        >
-          <td>{{ organ.name }}</td>
-          <td>{{ organ.desc }}</td>
-        </tr>
-      </tbody>
-    </v-table>
+      </template>
+    </v-data-table>
 
     <h2>Gastrointestinal Tract</h2>
-    <v-table striped="even">
-      <thead>
+    <v-data-table
+      :items="giTract"
+      :headers="headers"
+      hide-default-footer
+    >
+      <template #headers="{ columns }">
         <tr>
-          <th class="text-left">Organ</th>
-          <th class="text-left">Description</th>
+          <template v-for="column in columns" :key="column.title">
+            <th>
+              <span class="text-primary font-weight-bold text-uppercase">
+                {{ column.title }}
+              </span>
+            </th>
+          </template>
         </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="organ in giTract"
-          :key="organ.name"
-        >
-          <td>{{ organ.name }}</td>
-          <td>{{ organ.desc }}</td>
-        </tr>
-      </tbody>
-    </v-table>
+      </template>
+    </v-data-table>
   </v-container>
 </template>
-
-<style></style>

@@ -1,26 +1,26 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 const headers = [
-  { title: "Location", value: "location" },
-  { title: "Enzymes/Coenzymes", value: "enzymes" },
+  { title: "Macronutrient", value: "macro" },
+  { title: "Products", value: "products" },
 ];
 const digestiveEnzymes = [
   {
-    location: "Mouth",
-    enzymes: ["Salivary amylase", "Lingual lipase"],
+    macro: "Carbohydrate",
+    products: ["glucose", "galactose", "fructose"],
   },
   {
-    location: "Stomach",
-    enzymes: ["Pepsin", "Gastric lipase"],
+    macro: "Protein",
+    products: ["peptides", "amino acids"],
   },
   {
-    location: "Small Instestine",
-    enzymes: ["Pancreatic alpha-amylase", "Brush border disaccharidases", "Pancreatic Lipase", "Colipase", "Phospholipase-A2", "Cholesterol esterase", "Proteases", "Brush Border peptidases"],
+    macro: "Lipid",
+    products: ["lysolecithin", "2-monoglyceride", "fatty acid", "cholesterol"],
   },
 ];
 </script>
 
 <template>
-  <v-container>
+    <v-container>
     <v-data-table
       :items="digestiveEnzymes"
       :headers="headers"
@@ -37,10 +37,10 @@ const digestiveEnzymes = [
           </template>
         </tr>
       </template>
-      <template #item.enzymes="{ value }">
+      <template #item.products="{ value }">
         <v-list>
-          <v-list-item v-for="enz in value" :key="enz">
-            {{ enz }}
+          <v-list-item v-for="prod in value" :key="prod">
+            <span class="text-primary font-weight-bold">{{ prod }}</span>
           </v-list-item>
         </v-list>
       </template>

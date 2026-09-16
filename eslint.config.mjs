@@ -24,6 +24,9 @@ export default withNuxt(antfu({
         max: 1,
       },
     }],
+    "vue/valid-v-slot": ["error", {
+      allowModifiers: true,
+    }],
     "ts/no-redeclare": "off",
     "ts/consistent-type-definitions": ["error", "type"],
     "no-console": ["warn"],

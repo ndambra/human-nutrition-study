@@ -1,26 +1,40 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 const headers = [
   { title: "Location", value: "location" },
   { title: "Enzymes/Coenzymes", value: "enzymes" },
 ];
 const digestiveEnzymes = [
   {
-    location: "Mouth",
-    enzymes: ["Salivary amylase", "Lingual lipase"],
-  },
-  {
-    location: "Stomach",
-    enzymes: ["Pepsin", "Gastric lipase"],
+    location: "Pancreas",
+    enzymes: [
+        {
+            enzyme: "Cholesterol esterase",
+            desc: "secreted into duodenum in response to CCK"
+        },
+        {
+            enzyme: "phospholipase A2",
+            desc: "secreted into duodenum in response to CCK"
+        }
+    ],
   },
   {
     location: "Small Instestine",
-    enzymes: ["Pancreatic alpha-amylase", "Brush border disaccharidases", "Pancreatic Lipase", "Colipase", "Phospholipase-A2", "Cholesterol esterase", "Proteases", "Brush Border peptidases"],
+    enzymes: [
+        {
+            enzyme: "Cholesterol esterase",
+            desc: "cleaves FA from cholesterol esters"
+        },
+        {
+            enzyme: "phospholipase A2",
+            desc: "cleaves the C2 FA from phospholipids"
+        }
+    ],
   },
 ];
 </script>
 
 <template>
-  <v-container>
+    <v-container>
     <v-data-table
       :items="digestiveEnzymes"
       :headers="headers"
@@ -40,7 +54,7 @@ const digestiveEnzymes = [
       <template #item.enzymes="{ value }">
         <v-list>
           <v-list-item v-for="enz in value" :key="enz">
-            {{ enz }}
+            <span class="text-primary font-weight-bold">{{ enz.enzyme }}</span> - {{ enz.desc }}
           </v-list-item>
         </v-list>
       </template>

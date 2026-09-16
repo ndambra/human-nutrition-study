@@ -10,6 +10,12 @@ export default defineNuxtConfig({
     transpile: ["vuetify"],
   },
   vite: {
+    // build: {
+    //   rollupOptions: {
+    //     // Replace 'problematic-package' with the actual name of the library causing the error
+    //     external: ['vitejs'],
+    //   },
+    // },
     plugins: [
       vuetify({ autoImport: true }),
     ],
