@@ -16,6 +16,11 @@ const items = [
     value: "absorption",
     link: "/absorption",
   },
+  {
+    title: "Nutritional Assessment",
+    value: "nutritional-assessment",
+    link: "/nutritional-assessment",
+  },
 ];
 </script>
 
