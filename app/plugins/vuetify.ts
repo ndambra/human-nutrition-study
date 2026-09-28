@@ -7,17 +7,22 @@ export default defineNuxtPlugin((nuxtApp) => {
   const vuetify = createVuetify({
     ssr: true, // Crucial for proper Nuxt Server-Side Rendering
     theme: {
-      defaultTheme: "myCustomTheme",
+      defaultTheme: "customDark",
       themes: {
-        myCustomTheme: {
+        customDark: {
           dark: true,
           colors: {
-            background: "#0f172a", // slate-900
-            surface: "#020617", // slate-950
-            primary: "#10b981", // Emerald green
-            secondary: "#f59e0b", // Amber accent
+            primary: "#bb86fc",
+            secondary: "#03dac5",
           },
         },
+        customLight: {
+          dark: false,
+          colors: {
+            primary: "#8114e1",
+            secondary: "#03dac5",
+          }
+        }
       },
     },
   });

@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { useTheme } from 'vuetify';
+
+const theme = useTheme()
 const drawer = ref(false);
 const items = [
   {
@@ -21,17 +24,39 @@ const items = [
     value: "nutritional-assessment",
     link: "/nutritional-assessment",
   },
+  {
+    title: "Study Tools",
+    value: "study-tools",
+    link: "/study-tools",
+  },
 ];
+
+const toggleIcon = computed(() => {
+    return theme.current.value.dark ? 'mdi-weather-sunny' : 'mdi-moon-waning-crescent';
+  })
+
+function toggleTheme() {
+  theme.global.name.value = theme.global.current.value.dark ? 'customLight' : 'customDark'
+}
 </script>
 
 <template>
   <v-app>
-    <v-app-bar>
+    <v-app-bar class="pe-3">
       <template #prepend>
         <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       </template>
 
       <v-app-bar-title>Human Nutrition Study</v-app-bar-title>
+
+      <template v-slot:append>
+        <v-btn
+          @click="toggleTheme"
+          :icon="toggleIcon"
+          variant="tonal"
+          size="small"
+        ></v-btn>
+      </template>
     </v-app-bar>
     <v-navigation-drawer
       v-model="drawer"
