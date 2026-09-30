@@ -20,7 +20,7 @@ const digestiveEnzymes = [
 </script>
 
 <template>
-    <v-container>
+  <v-container>
     <v-data-table
       :items="digestiveEnzymes"
       :headers="headers"

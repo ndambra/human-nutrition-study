@@ -21,8 +21,8 @@ export default defineNuxtPlugin((nuxtApp) => {
           colors: {
             primary: "#8114e1",
             secondary: "#03dac5",
-          }
-        }
+          },
+        },
       },
     },
   });

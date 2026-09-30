@@ -7,34 +7,34 @@ const digestiveEnzymes = [
   {
     location: "Pancreas",
     enzymes: [
-        {
-            enzyme: "Cholesterol esterase",
-            desc: "secreted into duodenum in response to CCK"
-        },
-        {
-            enzyme: "phospholipase A2",
-            desc: "secreted into duodenum in response to CCK"
-        }
+      {
+        enzyme: "Cholesterol esterase",
+        desc: "secreted into duodenum in response to CCK",
+      },
+      {
+        enzyme: "phospholipase A2",
+        desc: "secreted into duodenum in response to CCK",
+      },
     ],
   },
   {
     location: "Small Instestine",
     enzymes: [
-        {
-            enzyme: "Cholesterol esterase",
-            desc: "cleaves FA from cholesterol esters"
-        },
-        {
-            enzyme: "phospholipase A2",
-            desc: "cleaves the C2 FA from phospholipids"
-        }
+      {
+        enzyme: "Cholesterol esterase",
+        desc: "cleaves FA from cholesterol esters",
+      },
+      {
+        enzyme: "phospholipase A2",
+        desc: "cleaves the C2 FA from phospholipids",
+      },
     ],
   },
 ];
 </script>
 
 <template>
-    <v-container>
+  <v-container>
     <v-data-table
       :items="digestiveEnzymes"
       :headers="headers"

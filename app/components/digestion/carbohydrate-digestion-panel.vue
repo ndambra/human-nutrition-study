@@ -7,44 +7,44 @@ const digestiveEnzymes = [
   {
     location: "Mouth",
     enzymes: [
-        {
-            enzyme: "Salivary amylase",
-            desc: "minor starch digestion"
-        }
+      {
+        enzyme: "Salivary amylase",
+        desc: "minor starch digestion",
+      },
     ],
   },
   {
     location: "Stomach",
     enzymes: [
-        { 
-            enzyme: "Salivary amylase",
-            desc: "X inactivated by stomach acid"
-        }
+      {
+        enzyme: "Salivary amylase",
+        desc: "X inactivated by stomach acid",
+      },
     ],
   },
   {
     location: "Pancreas",
     enzymes: [
-        {
-            enzyme: "Pancreatic amylase",
-            desc: "secreted into duodenum in response to CCK"
-        }
+      {
+        enzyme: "Pancreatic amylase",
+        desc: "secreted into duodenum in response to CCK",
+      },
     ],
   },
   {
     location: "Small Instestine (major site of digestion)",
     enzymes: [
-        {
-            enzyme: "Brushborder disaccharidases",
-            desc: "cleave disaccharides to monosaccharides"
-        }
+      {
+        enzyme: "Brushborder disaccharidases",
+        desc: "cleave disaccharides to monosaccharides",
+      },
     ],
   },
 ];
 </script>
 
 <template>
-    <v-container>
+  <v-container>
     <v-data-table
       :items="digestiveEnzymes"
       :headers="headers"

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useTheme } from 'vuetify';
+import { useTheme } from "vuetify";
 
-const theme = useTheme()
+const theme = useTheme();
 const drawer = ref(false);
 const items = [
   {
@@ -32,11 +32,11 @@ const items = [
 ];
 
 const toggleIcon = computed(() => {
-    return theme.current.value.dark ? 'mdi-weather-sunny' : 'mdi-moon-waning-crescent';
-  })
+  return theme.current.value.dark ? "mdi-weather-sunny" : "mdi-moon-waning-crescent";
+});
 
 function toggleTheme() {
-  theme.global.name.value = theme.global.current.value.dark ? 'customLight' : 'customDark'
+  theme.global.name.value = theme.global.current.value.dark ? "customLight" : "customDark";
 }
 </script>
 
@@ -49,13 +49,13 @@ function toggleTheme() {
 
       <v-app-bar-title>Human Nutrition Study</v-app-bar-title>
 
-      <template v-slot:append>
+      <template #append>
         <v-btn
-          @click="toggleTheme"
           :icon="toggleIcon"
           variant="tonal"
           size="small"
-        ></v-btn>
+          @click="toggleTheme"
+        />
       </template>
     </v-app-bar>
     <v-navigation-drawer

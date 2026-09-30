@@ -7,52 +7,52 @@ const digestiveEnzymes = [
   {
     location: "Mouth",
     enzymes: [
-        {
-            enzyme: "none",
-            desc: "no protein digestion"
-        }
+      {
+        enzyme: "none",
+        desc: "no protein digestion",
+      },
     ],
   },
   {
     location: "Stomach",
     enzymes: [
-        { 
-            enzyme: "gastrin",
-            desc: "stimulates HCl and pepsinogen secretion"
-        },
-        { 
-            enzyme: "HCl",
-            desc: "activates pepsin"
-        },
-        { 
-            enzyme: "pepsin",
-            desc: "begins digesting polypeptides"
-        },
+      {
+        enzyme: "gastrin",
+        desc: "stimulates HCl and pepsinogen secretion",
+      },
+      {
+        enzyme: "HCl",
+        desc: "activates pepsin",
+      },
+      {
+        enzyme: "pepsin",
+        desc: "begins digesting polypeptides",
+      },
     ],
   },
   {
     location: "Pancreas",
     enzymes: [
-        {
-            enzyme: "proteases",
-            desc: "secreted into duodenum in response to CCK"
-        }
+      {
+        enzyme: "proteases",
+        desc: "secreted into duodenum in response to CCK",
+      },
     ],
   },
   {
     location: "Small Instestine (major site of digestion)",
     enzymes: [
-        {
-            enzyme: "Brushborder peptidases",
-            desc: "cleave polypeptides to individual amino acids or small peptides"
-        }
+      {
+        enzyme: "Brushborder peptidases",
+        desc: "cleave polypeptides to individual amino acids or small peptides",
+      },
     ],
   },
 ];
 </script>
 
 <template>
-    <v-container>
+  <v-container>
     <v-data-table
       :items="digestiveEnzymes"
       :headers="headers"
