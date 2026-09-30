@@ -31,23 +31,31 @@ const items = [
   },
 ];
 
+const darkModeColor = computed(() => theme.current.value.dark ? "surface" : "primary");
 const toggleIcon = computed(() => {
   return theme.current.value.dark ? "mdi-weather-sunny" : "mdi-moon-waning-crescent";
 });
 
 function toggleTheme() {
-  theme.global.name.value = theme.global.current.value.dark ? "customLight" : "customDark";
+  if (theme.current.value.dark) {
+    theme.change("customLight");
+  }
+  else {
+    theme.change("customDark");
+  }
 }
 </script>
 
 <template>
   <v-app>
-    <v-app-bar class="pe-3">
+    <v-app-bar class="pe-3" :color="darkModeColor">
       <template #prepend>
         <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       </template>
 
-      <v-app-bar-title>Human Nutrition Study</v-app-bar-title>
+      <v-app-bar-title class="cursor-pointer" @click="$router.push('/')">
+        Human Nutrition Study
+      </v-app-bar-title>
 
       <template #append>
         <v-btn
