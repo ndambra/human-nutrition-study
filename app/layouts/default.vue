@@ -32,6 +32,8 @@ const items = [
 ];
 
 const darkModeColor = computed(() => theme.current.value.dark ? "surface" : "primary");
+const user = "ndambra";
+
 const toggleIcon = computed(() => {
   return theme.current.value.dark ? "mdi-weather-sunny" : "mdi-moon-waning-crescent";
 });
@@ -64,6 +66,19 @@ function toggleTheme() {
           size="small"
           @click="toggleTheme"
         />
+        <v-btn
+          v-if="!user"
+          class="ml-2"
+          prepend-icon="mdi-account"
+          rounded="sm"
+          color="primary"
+          to="/login"
+        >
+          Login
+        </v-btn>
+        <v-btn v-else>
+          {{ user }}
+        </v-btn>
       </template>
     </v-app-bar>
     <v-navigation-drawer
