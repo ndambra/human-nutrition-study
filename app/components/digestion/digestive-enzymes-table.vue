@@ -21,6 +21,15 @@ const digestiveEnzymes = [
 
 <template>
   <v-container>
+    <div class="d-flex justify-end">
+      <v-btn
+        color="primary"
+        variant="tonal"
+        to="/digestion/digestive-enzymes"
+      >
+        Learn More
+      </v-btn>
+    </div>
     <v-data-table
       :items="digestiveEnzymes"
       :headers="headers"

@@ -31,6 +31,7 @@ const items = [
   },
 ];
 
+const darkModeColor = computed(() => theme.current.value.dark ? "surface" : "primary");
 const user = "ndambra";
 
 const toggleIcon = computed(() => {
@@ -38,7 +39,7 @@ const toggleIcon = computed(() => {
 });
 
 function toggleTheme() {
-  if (theme.global.current.value.dark) {
+  if (theme.current.value.dark) {
     theme.change("customLight");
   }
   else {
@@ -49,12 +50,14 @@ function toggleTheme() {
 
 <template>
   <v-app>
-    <v-app-bar class="pe-3">
+    <v-app-bar class="pe-3" :color="darkModeColor">
       <template #prepend>
         <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       </template>
 
-      <v-app-bar-title>Human Nutrition Study</v-app-bar-title>
+      <v-app-bar-title class="cursor-pointer" @click="$router.push('/')">
+        Human Nutrition Study
+      </v-app-bar-title>
 
       <template #append>
         <v-btn
