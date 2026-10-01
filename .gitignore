@@ -23,3 +23,5 @@ logs
 
 # vscode
 .vscode
+
+service-account.json

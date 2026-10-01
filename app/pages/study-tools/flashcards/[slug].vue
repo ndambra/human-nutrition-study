@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const route = useRoute()
+const route = useRoute();
 
-console.log("route", route.params);
+console.warn("route", route.params);
 </script>
 
 <template>
-    <p>{{ $route.params.slug }}</p>
+  <p>{{ $route.params.slug }}</p>
 </template>

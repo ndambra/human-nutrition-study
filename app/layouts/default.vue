@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useTheme } from 'vuetify';
+import { useTheme } from "vuetify";
 
-const theme = useTheme()
+const theme = useTheme();
 const drawer = ref(false);
 const items = [
   {
@@ -31,12 +31,19 @@ const items = [
   },
 ];
 
+const user = "ndambra";
+
 const toggleIcon = computed(() => {
-    return theme.current.value.dark ? 'mdi-weather-sunny' : 'mdi-moon-waning-crescent';
-  })
+  return theme.current.value.dark ? "mdi-weather-sunny" : "mdi-moon-waning-crescent";
+});
 
 function toggleTheme() {
-  theme.global.name.value = theme.global.current.value.dark ? 'customLight' : 'customDark'
+  if (theme.global.current.value.dark) {
+    theme.change("customLight");
+  }
+  else {
+    theme.change("customDark");
+  }
 }
 </script>
 
@@ -49,13 +56,26 @@ function toggleTheme() {
 
       <v-app-bar-title>Human Nutrition Study</v-app-bar-title>
 
-      <template v-slot:append>
+      <template #append>
         <v-btn
-          @click="toggleTheme"
           :icon="toggleIcon"
           variant="tonal"
           size="small"
-        ></v-btn>
+          @click="toggleTheme"
+        />
+        <v-btn
+          v-if="!user"
+          class="ml-2"
+          prepend-icon="mdi-account"
+          rounded="sm"
+          color="primary"
+          to="/login"
+        >
+          Login
+        </v-btn>
+        <v-btn v-else>
+          {{ user }}
+        </v-btn>
       </template>
     </v-app-bar>
     <v-navigation-drawer

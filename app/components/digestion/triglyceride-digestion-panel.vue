@@ -7,74 +7,74 @@ const digestiveEnzymes = [
   {
     location: "Mouth",
     enzymes: [
-        {
-            enzyme: "lingual lipase",
-            desc: "released",
-        }
+      {
+        enzyme: "lingual lipase",
+        desc: "released",
+      },
     ],
   },
   {
     location: "Stomach",
     enzymes: [
-        { 
-            enzyme: "lingual lipase",
-            desc: "minor digestion"
-        },
-        { 
-            enzyme: "gastric lipase",
-            desc: "release stimulated by gastrin; cleaves sn-3 FAs"
-        },
+      {
+        enzyme: "lingual lipase",
+        desc: "minor digestion",
+      },
+      {
+        enzyme: "gastric lipase",
+        desc: "release stimulated by gastrin; cleaves sn-3 FAs",
+      },
     ],
   },
   {
     location: "Liver",
     enzymes: [
-        {
-            enzyme: "bile",
-            desc: "produced and sent to gallbladder in response to secretin"
-        }
-    ]
+      {
+        enzyme: "bile",
+        desc: "produced and sent to gallbladder in response to secretin",
+      },
+    ],
   },
   {
     location: "Gallbladder",
     enzymes: [
-        {
-            enzyme: "bile",
-            desc: "stimulated by CCK and released into duodenum"
-        }
-    ]
+      {
+        enzyme: "bile",
+        desc: "stimulated by CCK and released into duodenum",
+      },
+    ],
   },
   {
     location: "Pancreas",
     enzymes: [
-        {
-            enzyme: "Pancreatic lipase",
-            desc: "secreted into duodenum in response to CCK"
-        },
-        {
-            enzyme: "procolipase",
-            desc: "secreted into duodenum in response to CCK"
-        }
+      {
+        enzyme: "Pancreatic lipase",
+        desc: "secreted into duodenum in response to CCK",
+      },
+      {
+        enzyme: "procolipase",
+        desc: "secreted into duodenum in response to CCK",
+      },
     ],
   },
   {
     location: "Small Instestine (major site of digestion)",
     enzymes: [
-        {
-            enzyme: "Pancreatic lipase",
-            desc: "cleaves sn-1 and sn-3 FAs"
-        },
-        {
-            enzyme: "procolipase",
-            desc: "cleaved by trypsin to form colipase"
-        }
+      {
+        enzyme: "Pancreatic lipase",
+        desc: "cleaves sn-1 and sn-3 FAs",
+      },
+      {
+        enzyme: "procolipase",
+        desc: "cleaved by trypsin to form colipase",
+      },
     ],
   },
 ];
 </script>
 
 <template>
-    <v-container>
+  <v-container>
     <v-data-table
       :items="digestiveEnzymes"
       :headers="headers"
