@@ -4,8 +4,6 @@ import CholesterolEsterPhospholipidDigestion from "~/components/digestion/choles
 import ProductsReadyForUptake from "~/components/digestion/products-ready-for-uptake.vue";
 import ProteinDigestionPanel from "~/components/digestion/protein-digestion-panel.vue";
 import TriglycerideDigestionPanel from "~/components/digestion/triglyceride-digestion-panel.vue";
-
-const tab = ref("carbs");
 </script>
 
 <template>
@@ -167,40 +165,35 @@ const tab = ref("carbs");
     </v-expansion-panels>
 
     <v-divider />
-    <v-tabs
-      v-model="tab"
-      color="primary"
-      class="mt-5"
-    >
-      <v-tab value="carbs">
-        Carbohydrates
-      </v-tab>
-      <v-tab value="protein">
-        Protein
-      </v-tab>
-      <v-tab value="lipids">
-        Lipids
-      </v-tab>
-    </v-tabs>
 
-    <v-divider />
-
-    <v-tabs-window v-model="tab">
-      <v-tabs-window-item value="carbs">
-        <v-container fluid>
+    <v-card class="mt-4 pl-2 pr-2">
+      <v-card-title>Explore More</v-card-title>
+      <v-divider />
+      <v-card-text class="d-flex justify-space-between">
+        <v-btn
+          size="x-large"
+          variant="text"
+          color="primary"
+          to="/carbohydrates"
+        >
           Carbohydrates
-        </v-container>
-      </v-tabs-window-item>
-      <v-tabs-window-item value="protein">
-        <v-container fluid>
+        </v-btn>
+        <v-btn
+          size="x-large"
+          variant="text"
+          color="primary"
+        >
           Protein
-        </v-container>
-      </v-tabs-window-item>
-      <v-tabs-window-item value="lipids">
-        <v-container fluid>
+        </v-btn>
+        <v-btn
+          size="x-large"
+          variant="text"
+          color="primary"
+          class="mr-1"
+        >
           Lipids
-        </v-container>
-      </v-tabs-window-item>
-    </v-tabs-window>
+        </v-btn>
+      </v-card-text>
+    </v-card>
   </v-container>
 </template>

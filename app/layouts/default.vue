@@ -62,13 +62,13 @@ function toggleTheme() {
       <template #append>
         <v-btn
           :icon="toggleIcon"
+          class="mr-2"
           variant="tonal"
           size="small"
           @click="toggleTheme"
         />
         <v-btn
           v-if="!user"
-          class="ml-2"
           prepend-icon="mdi-account"
           rounded="sm"
           color="primary"
@@ -76,7 +76,12 @@ function toggleTheme() {
         >
           Login
         </v-btn>
-        <v-btn v-else>
+        <v-btn
+          v-else
+          rounded="md"
+          variant="tonal"
+          color="primary"
+        >
           {{ user }}
         </v-btn>
       </template>
