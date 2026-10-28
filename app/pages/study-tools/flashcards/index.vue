@@ -10,6 +10,7 @@ const standardCards: FlashcardSet[] = [
   { title: "Absorption", flex: 6, link: "absorption" },
   { title: "Nutritional Assessment", flex: 6, link: "nutritional-assessment" },
   { title: "The Cell", flex: 6, link: "the-cell" },
+  { title: "Protein", flex: 6, link: "protein" },
 ];
 
 function navigate(link: string) {
