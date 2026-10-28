@@ -74,9 +74,9 @@ function toggleTheme() {
         </v-btn>
         <v-btn
           v-else
+          variant="elevated"
           rounded="md"
-          variant="tonal"
-          :color="loginBtnColor"
+          color="primary"
         >
           {{ user }}
         </v-btn>
