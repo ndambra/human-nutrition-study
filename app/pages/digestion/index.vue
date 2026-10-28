@@ -7,8 +7,8 @@ import TriglycerideDigestionPanel from "~/components/digestion/triglyceride-dige
 </script>
 
 <template>
-  <v-container class="w-75">
-    <h1>Summary</h1>
+  <v-container class="w-80">
+    <h1>Digestion</h1>
     <v-expansion-panels
       :rounded="[20, 8]"
       gap="8"

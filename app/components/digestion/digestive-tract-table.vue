@@ -1,51 +1,47 @@
 <script lang="ts" setup>
-const headers = [
-  { title: "Organ", value: "name" },
-  { title: "Description", value: "desc" },
-];
-const accessoryOrgans = [
+const aoCards = [
   {
     name: "Salivary glands",
-    desc: "Release a mixture of water, mucus, and enzymes",
+    desc: "Release a mixture of water, mucus, and enzymes.",
   },
   {
     name: "Liver",
-    desc: "Produces bile, an important secretion needed for lipid digestion",
+    desc: "Produces bile, an important secretion needed for lipid digestion.",
   },
   {
     name: "Gallbladder",
-    desc: "Stores and releases bile, needed for lipid digestion",
+    desc: "Stores and releases bile, needed for lipid digestion.",
   },
   {
     name: "Pancreas",
-    desc: "Releases pancreatic juice that neutralizes chyme and contains enzymes needed for carbohydrate, protein, and lipid digestion",
+    desc: "Releases pancreatic juice that neutralizes chyme and contains enzymes needed for carbohydrate, protein, and lipid digestion.",
   },
 ];
 
-const giTract = [
+const giTractCards = [
   {
     name: "Oral cavity",
-    desc: "Mechanical breakdown, moistening, and mixing of food with saliva",
+    desc: "Mechanical breakdown, moistening, and mixing of food with saliva.",
   },
   {
     name: "Pharynx",
-    desc: "Propels food from the back of the oral cavity into the esophagus",
+    desc: "Propels food from the back of the oral cavity into the esophagus.",
   },
   {
     name: "Esophagus",
-    desc: "Transports food from the pharynx to the stomach",
+    desc: "Transports food from the pharynx to the stomach.",
   },
   {
     name: "Stomach",
-    desc: "Muscular contractions mix food with acid and enzymes, causing the chemical and physical breakdown of food into chyme",
+    desc: "Muscular contractions mix food with acid and enzymes, causing the chemical and physical breakdown of food into chyme.",
   },
   {
     name: "Small Intestine",
-    desc: "major site of enzamatic digestion and nutrient absorption",
+    desc: "Major site of enzamatic digestion and nutrient absorption.",
   },
   {
     name: "Large Intestine",
-    desc: "receives and prepares undigested food to be eliminated from the body as feces",
+    desc: "Receives and prepares undigested food to be eliminated from the body as feces.",
   },
 ];
 </script>
@@ -53,7 +49,39 @@ const giTract = [
 <template>
   <v-container>
     <h2>Accessory Organs</h2>
-    <v-data-table
+    <v-row>
+      <v-col
+        v-for="card in aoCards"
+        :key="card.name"
+        cols="4"
+      >
+        <v-card variant="tonal" class="fill-height">
+          <v-card-title class="text-primary">
+            {{ card.name }}
+          </v-card-title>
+          <v-card-text>{{ card.desc }}</v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+
+    <h2 class="mt-10">
+      Gastrointestinal Tract
+    </h2>
+    <v-row>
+      <v-col
+        v-for="card in giTractCards"
+        :key="card.name"
+        cols="4"
+      >
+        <v-card variant="tonal" class="fill-height">
+          <v-card-title class="text-primary">
+            {{ card.name }}
+          </v-card-title>
+          <v-card-text>{{ card.desc }}</v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+    <!-- <v-data-table
       :items="accessoryOrgans"
       :headers="headers"
       hide-default-footer
@@ -88,6 +116,6 @@ const giTract = [
           </template>
         </tr>
       </template>
-    </v-data-table>
+    </v-data-table> -->
   </v-container>
 </template>

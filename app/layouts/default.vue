@@ -10,14 +10,9 @@ const items = [
     link: "/",
   },
   {
-    title: "Digestion",
-    value: "digestion",
-    link: "/digestion",
-  },
-  {
-    title: "Absorption",
-    value: "absorption",
-    link: "/absorption",
+    title: "Nutrient Metabolism",
+    value: "metabolism",
+    link: "/metabolism",
   },
   {
     title: "Nutritional Assessment",
@@ -31,6 +26,7 @@ const items = [
   },
 ];
 
+const loginBtnColor = computed(() => theme.current.value.dark ? "primary" : "surface");
 const darkModeColor = computed(() => theme.current.value.dark ? "surface" : "primary");
 const user = "ndambra";
 
@@ -80,7 +76,7 @@ function toggleTheme() {
           v-else
           rounded="md"
           variant="tonal"
-          color="primary"
+          :color="loginBtnColor"
         >
           {{ user }}
         </v-btn>
