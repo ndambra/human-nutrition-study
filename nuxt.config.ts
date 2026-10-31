@@ -3,9 +3,7 @@ import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 export default defineNuxtConfig({
   compatibilityDate: "2026-09-02",
   devtools: { enabled: true },
-  modules: [
-    "@nuxt/eslint",
-  ],
+  modules: ["@nuxt/eslint", "@pinia/nuxt"],
   build: {
     transpile: ["vuetify"],
   },

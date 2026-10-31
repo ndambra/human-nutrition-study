@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const quizzes = [
   { title: "Protein", subtitle: "Nutrition Metabolism", link: "protein" },
+  { title: "Lipids", subtitle: "Nutrition Metabolism", link: "lipids" },
 ];
 
 function navigate(link: string) {
@@ -11,7 +12,18 @@ function navigate(link: string) {
 
 <template>
   <v-container>
-    <h1>Quizzes</h1>
+    <v-row class="justify-space-between align-center">
+      <h1>Quizzes</h1>
+
+      <v-btn
+        prepend-icon="mdi-chevron-left"
+        variant="outlined"
+        color="primary"
+        to="/study-tools"
+      >
+        Back to Study Tools
+      </v-btn>
+    </v-row>
     <v-row>
       <v-col v-for="quiz in quizzes" :key="quiz.title">
         <v-card class="pa-1">

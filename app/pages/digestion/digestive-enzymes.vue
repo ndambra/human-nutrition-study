@@ -5,7 +5,7 @@ const headers = [
   { title: "Selected Functions", key: "functions" },
 ];
 const enzymes = [
-    {enzyme: "Gastrin", sites: ["Stomach", "Small intestine"], functions: ["Stimulates gastric acid secretion", "Stimulates pepsinogen secretion"], details:  {info: "more info"}}
+  { enzyme: "Gastrin", sites: ["Stomach", "Small intestine"], functions: ["Stimulates gastric acid secretion", "Stimulates pepsinogen secretion"], details: { info: "more info" } },
 ];
 </script>
 
@@ -18,9 +18,9 @@ const enzymes = [
       expand-strategy="single"
       item-value="enzyme"
       hide-default-footer
-        show-expand
+      show-expand
     >
-    <template #headers="{ columns }">
+      <template #headers="{ columns }">
         <tr>
           <template v-for="column in columns" :key="column.title">
             <th>
@@ -45,10 +45,14 @@ const enzymes = [
           </v-list-item>
         </v-list>
       </template>
-      
-      <template v-slot:expanded="{ item }">
-        <v-sheet class="ma-2" rounded="lg" border>
-            {{ item.details.info }}
+
+      <template #expanded="{ item }">
+        <v-sheet
+          class="ma-2"
+          rounded="lg"
+          border
+        >
+          {{ item.details.info }}
         </v-sheet>
       </template>
     </v-data-table>

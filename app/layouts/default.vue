@@ -26,7 +26,7 @@ const items = [
   },
 ];
 
-const loginBtnColor = computed(() => theme.current.value.dark ? "primary" : "surface");
+// const loginBtnColor = computed(() => theme.current.value.dark ? "primary" : "surface");
 const darkModeColor = computed(() => theme.current.value.dark ? "surface" : "primary");
 const user = "ndambra";
 

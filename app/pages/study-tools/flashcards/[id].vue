@@ -1,16 +1,15 @@
 <script setup lang="ts">
-const cards = [
-  { front: "", back: "" },
-  { front: "", back: "" },
-  { front: "", back: "" },
-  { front: "", back: "" },
-  { front: "", back: "" },
+const route = useRoute();
 
-];
+const id = computed(() => {
+  const param = route.params.id;
+  return Array.isArray(param) ? param[0] : param;
+});
+const cards = computed(() => id.value ? getFlashcards(id.value) : []);
 const currCard = ref(0);
 const showFront = ref(true);
 const numCards = computed(() => {
-  return cards.length;
+  return cards.value.length;
 });
 
 function prevCard() {
@@ -37,7 +36,7 @@ function nextCard() {
 <template>
   <v-container>
     <h2 class="text-center">
-      Protein Flashcards
+      {{ id }} Flashcards
     </h2>
     <v-card
       class="mx-auto pl-3 pr-3 d-flex justify-center align-center cursor-pointer flex-wrap"

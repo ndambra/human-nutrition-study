@@ -21,7 +21,17 @@ function navigate(link: string) {
 
 <template>
   <v-container>
-    <h2>Custom Flashcard Sets</h2>
+    <v-row class="justify-space-between align-center">
+      <h2>Custom Flashcard Sets</h2>
+      <v-btn
+        prepend-icon="mdi-chevron-left"
+        variant="outlined"
+        color="primary"
+        to="/study-tools"
+      >
+        Back to Study Tools
+      </v-btn>
+    </v-row>
     <v-row>
       <v-col
         v-for="card in customCards"
