@@ -51,6 +51,22 @@ const theCell: Flashcard[] = [
   { front: "Plasma Membrane", back: "Sheet-like structures composed primarily of phospholipids and protein; forming a lipid bilayer to prevent passage of water soluble components" },
   { front: "Nucleus", back: "contains the DNA of the cell" },
 ];
+const diabetes: Flashcard[] = [
+  { front: "Diabetes Mellitus", back: "A group of disesase characterized by high blood glucose concentrations resulting from defects in insulin secretion, insulin action, or both" },
+  { front: "Types of Diabetes", back: "Type 1; Type 2; Gestational diabetes mellitus; prediabetes" },
+  { front: "", back: "" },
+  { front: "", back: "" },
+  { front: "", back: "" },
+  { front: "", back: "" },
+  { front: "", back: "" },
+  { front: "", back: "" },
+  { front: "", back: "" },
+  { front: "", back: "" },
+  { front: "", back: "" },
+  { front: "", back: "" },
+  { front: "", back: "" },
+  { front: "", back: "" },
+];
 
 export function getFlashcards(type: string): Flashcard[] {
   switch (type) {
@@ -62,6 +78,8 @@ export function getFlashcards(type: string): Flashcard[] {
       return digestion;
     case "the-cell":
       return theCell;
+    case "diabetes":
+      return diabetes;
     default:
       return [] as Flashcard[];
   }

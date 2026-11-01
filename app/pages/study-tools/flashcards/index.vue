@@ -11,6 +11,7 @@ const standardCards: FlashcardSet[] = [
   { title: "Nutritional Assessment", flex: 6, link: "nutritional-assessment" },
   { title: "The Cell", flex: 6, link: "the-cell" },
   { title: "Protein", flex: 6, link: "protein" },
+  { title: "Diabetes", flex: 6, link: "diabetes" },
 ];
 
 function navigate(link: string) {
@@ -21,6 +22,7 @@ function navigate(link: string) {
 
 <template>
   <v-container>
+    <!-- TODO: switch to v-if here, show this is logged in or show text saying login to create custom sets -->
     <v-row class="justify-space-between align-center">
       <h2>Custom Flashcard Sets</h2>
       <v-btn
@@ -77,16 +79,18 @@ function navigate(link: string) {
         :key="card.title"
         :cols="card.flex"
       >
-        <v-card variant="tonal" min-height="120">
-          <v-card-title class="text-h4 font-weight-bold text-primary">
+        <v-card
+          class="pa-1"
+          variant="tonal"
+        >
+          <v-card-title class="text-h4 font-weight-bold">
             {{ card.title }}
           </v-card-title>
-          <v-card-text />
           <v-card-actions>
             <v-btn
-              variant="text"
-              color="secondary"
-              density="compact"
+              variant="elevated"
+              rounded="lg"
+              color="primary"
               @click="navigate(card.link)"
             >
               Study
