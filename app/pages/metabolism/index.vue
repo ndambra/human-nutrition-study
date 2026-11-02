@@ -3,7 +3,9 @@
 <template>
   <v-container class="w-75">
     <div>
-      <h2 class="text-center">Nutrient Metabolism</h2>
+      <h2 class="text-center">
+        Nutrient Metabolism
+      </h2>
     </div>
     <div class="d-flex justify-space-evenly">
       <v-btn
@@ -29,7 +31,9 @@
     </div>
 
     <div>
-      <h2 class="text-center">Disease States</h2>
+      <h2 class="text-center">
+        Disease States
+      </h2>
     </div>
     <div>
       <v-btn
