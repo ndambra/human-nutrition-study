@@ -29,24 +29,6 @@
         Absorption
       </v-btn>
     </div>
-
-    <div>
-      <h2 class="text-center">
-        Disease States
-      </h2>
-    </div>
-    <div>
-      <v-btn
-        to="/diabetes"
-        rounded="lg"
-        size="x-large"
-        height="70"
-        width="240"
-        color="primary"
-      >
-        Diabetes Mellitus
-      </v-btn>
-    </div>
   </v-container>
 </template>
 

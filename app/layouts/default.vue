@@ -8,21 +8,33 @@ const items = [
     title: "Home",
     value: "home",
     link: "/",
+    type: "link",
   },
+  // { type: "divider" },
   {
     title: "Nutrient Metabolism",
     value: "metabolism",
     link: "/metabolism",
+    type: "link",
+  },
+  {
+    title: "Clinical",
+    value: "clinical",
+    link: "/clinical",
+    type: "link",
   },
   {
     title: "Nutritional Assessment",
     value: "nutritional-assessment",
     link: "/nutritional-assessment",
+    type: "link",
   },
+  { type: "divider" },
   {
     title: "Study Tools",
     value: "study-tools",
     link: "/study-tools",
+    type: "link",
   },
 ];
 
@@ -36,17 +48,21 @@ const toggleIcon = computed(() => {
 
 function toggleTheme() {
   if (theme.current.value.dark) {
-    theme.change("customLight");
+    theme.change("myTheme");
   }
   else {
-    theme.change("customDark");
+    theme.change("darkTheme");
   }
 }
 </script>
 
 <template>
   <v-app>
-    <v-app-bar class="pe-3" :color="darkModeColor">
+    <v-app-bar
+      order="0"
+      class="pe-3"
+      :color="darkModeColor"
+    >
       <template #prepend>
         <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       </template>
@@ -67,7 +83,7 @@ function toggleTheme() {
           v-if="!user"
           prepend-icon="mdi-account"
           rounded="sm"
-          color="primary"
+          color="secondary"
           to="/login"
         >
           Login
@@ -76,7 +92,7 @@ function toggleTheme() {
           v-else
           variant="elevated"
           rounded="md"
-          color="primary"
+          color="secondary"
         >
           {{ user }}
         </v-btn>
@@ -86,13 +102,17 @@ function toggleTheme() {
       v-model="drawer"
       temporary
     >
-      <v-list>
-        <v-list-item
-          v-for="item in items"
-          :key="item.title"
-          :title="item.title"
-          @click="navigateTo(item.link)"
-        />
+      <v-list density="compact" nav>
+        <template v-for="item in items" :key="item.title">
+          <v-divider v-if="item.type === 'divider'" class="my-2" />
+          <v-list-item
+            v-else
+            :title="item.title"
+            :value="item.value"
+            :to="item.link"
+            color="secondary"
+          />
+        </template>
       </v-list>
     </v-navigation-drawer>
     <v-main>

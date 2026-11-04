@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import BpLipidGoals from "~/components/diabetes/bp-lipid-goals.vue";
 import Diagnosis from "~/components/diabetes/diagnosis.vue";
 import GestationalDiabetes from "~/components/diabetes/gestational-diabetes.vue";
+import GlycemicIndex from "~/components/diabetes/glycemic-index.vue";
+import Goals from "~/components/diabetes/goals.vue";
+import NutritionAndPa from "~/components/diabetes/nutrition-and-pa.vue";
 import PrediabetesInfo from "~/components/diabetes/prediabetes-info.vue";
 import Screening from "~/components/diabetes/screening.vue";
 import TypeOneDiabetes from "~/components/diabetes/type-one-diabetes.vue";
@@ -22,7 +26,7 @@ const items = [
 
 <template>
   <v-container>
-    <h1 class="text-center">
+    <h1 class="text-center" color="primary">
       Diabetes
     </h1>
     <v-tabs
@@ -98,9 +102,66 @@ const items = [
           </v-row>
         </v-expansion-panel-title>
         <v-expansion-panel-text>
-          <goals />
+          <Goals />
+        </v-expansion-panel-text>
+      </v-expansion-panel>
+      <v-expansion-panel>
+        <v-expansion-panel-title>
+          <v-row density="comfortable">
+            <v-col
+              class="d-flex justify-start"
+              cols="4"
+            >
+              Cardiovascular Risk: BP and Lipid Goals
+            </v-col>
+          </v-row>
+        </v-expansion-panel-title>
+        <v-expansion-panel-text>
+          <BpLipidGoals />
+        </v-expansion-panel-text>
+      </v-expansion-panel>
+      <v-expansion-panel>
+        <v-expansion-panel-title>
+          <v-row density="comfortable">
+            <v-col
+              class="d-flex justify-start"
+              cols="4"
+            >
+              Glycemic Index
+            </v-col>
+          </v-row>
+        </v-expansion-panel-title>
+        <v-expansion-panel-text>
+          <GlycemicIndex />
+        </v-expansion-panel-text>
+      </v-expansion-panel>
+      <v-expansion-panel>
+        <v-expansion-panel-title>
+          <v-row density="comfortable">
+            <v-col
+              class="d-flex justify-start"
+              cols="4"
+            >
+              Nutritional and Physical Activity Considerations
+            </v-col>
+          </v-row>
+        </v-expansion-panel-title>
+        <v-expansion-panel-text>
+          <NutritionAndPa />
         </v-expansion-panel-text>
       </v-expansion-panel>
     </v-expansion-panels>
+    <v-divider thickness="3" />
+    <v-btn
+      block
+      color="secondary"
+      variant="elevated"
+      size="large"
+      class="font-weight-bold mt-5"
+      rounded="lg"
+      to="/clinical/diabetes/medication"
+    >
+      Diabetes Medication
+    </v-btn>
   </v-container>
 </template>

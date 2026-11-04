@@ -5,7 +5,7 @@ type CardProps = {
   variant?: "text" | "flat" | "elevated" | "outlined" | "plain" | "tonal" | undefined;
   color?: string;
 };
-const props = defineProps<CardProps>();
+defineProps<CardProps>();
 </script>
 
 <template>

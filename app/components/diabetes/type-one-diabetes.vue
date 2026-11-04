@@ -41,8 +41,15 @@ const symptoms = [
             :key="symptom.name"
             cols="4"
           >
-            <v-card variant="flat" color="primary">
-              <v-card-title>{{ symptom.name }}</v-card-title>
+            <v-card
+              variant="flat"
+              color="primary"
+              class="fill-height d-flex flex-column justify-space-between"
+            >
+              <v-card-title class="text-wrap">
+                {{ symptom.name }}
+              </v-card-title>
+              <v-divider thickness="3" />
               <v-card-text>{{ symptom.desc }}</v-card-text>
               <v-card-actions>
                 <v-btn
@@ -54,6 +61,7 @@ const symptoms = [
                   variant="flat"
                   density="comfortable"
                   rounded="lg"
+                  class="align-self-end"
                 >
                   Learn More
                 </v-btn>

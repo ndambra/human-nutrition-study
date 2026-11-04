@@ -31,94 +31,101 @@ const gadAntibodies = [
 </script>
 
 <template>
-  <v-card class="mx-3 mb-3">
-    <!-- <v-card-title class="font-weight-bold">Type 1 and 2 Diagnosis</v-card-title> -->
-    <v-card-text>
-      <v-table
-        striped="odd"
-        density="compact"
-        class="border"
-      >
-        <template #top>
-          <h3>Type 1 and 2 Diagnosis</h3>
-        </template>
-        <thead class="bg-primary">
-          <tr>
-            <th class="text-left">
-              Test
-            </th>
-            <th class="text-left">
-              Diabetes Diagnostic Criterion
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            v-for="item in items"
-            :key="item.test"
-          >
-            <td>{{ item.test }}</td>
-            <td>{{ item.criteria }}</td>
-          </tr>
-        </tbody>
-      </v-table>
-      <v-list
-        lines="one"
-        density="compact"
-        :items="testNotes"
-      />
-      <v-divider thickness="3" class="my-4" />
-      <v-table
-        striped="odd"
-        density="compact"
-        class="border"
-      >
-        <template #top>
-          <h3>Clarifying Diabetes Type</h3>
-        </template>
-        <thead class="bg-primary">
-          <tr>
-            <th class="text-left">
-              Test
-            </th>
-            <th class="text-left">
-              Type 1 Diabetes
-            </th>
-            <th class="text-left">
-              Type 2 Diabetes
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            v-for="item in typeTests"
-            :key="item.test"
-          >
-            <td>{{ item.test }}</td>
-            <td>{{ item.one }}</td>
-            <td>{{ item.two }}</td>
-          </tr>
-        </tbody>
-      </v-table>
-      <v-row>
-        <v-col>
-          <v-list density="compact" lines="two">
-            <v-list-subheader>C-Peptide</v-list-subheader>
-            <v-list-item v-for="(item, i) in cPeptide" :key="i">
-              <v-list-item-subtitle>{{ item.title }}</v-list-item-subtitle>
-            </v-list-item>
-          </v-list>
-        </v-col>
-        <v-divider vertical inset />
-        <v-col>
-          <v-list density="compact">
-            <v-list-subheader>GAD Antibodies</v-list-subheader>
-            <v-list-item v-for="(item, i) in gadAntibodies" :key="i">
-              <v-list-item-subtitle>{{ item.title }}</v-list-item-subtitle>
-            </v-list-item>
-          </v-list>
-        </v-col>
-      </v-row>
-    </v-card-text>
-  </v-card>
+  <v-container>
+    <h3 class="font-weight-bold">
+      Type 1 and 2 Diagnosis
+    </h3>
+
+    <v-table
+      striped="odd"
+      density="compact"
+      class="border"
+      gridlines="all"
+    >
+      <thead class="bg-primary">
+        <tr>
+          <th class="text-left table-header">
+            Test
+          </th>
+          <th class="text-left table-header">
+            Diabetes Diagnostic Criterion
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="item in items"
+          :key="item.test"
+        >
+          <td>{{ item.test }}</td>
+          <td>{{ item.criteria }}</td>
+        </tr>
+      </tbody>
+    </v-table>
+    <v-list
+      lines="one"
+      density="compact"
+      :items="testNotes"
+    />
+    <v-divider thickness="3" class="my-2" />
+    <h3 class="font-weight-bold">
+      Clarifying Diabetes Type
+    </h3>
+    <v-table
+      striped="odd"
+      density="compact"
+      class="border"
+      gridlines="all"
+    >
+      <thead class="bg-primary">
+        <tr>
+          <th class="text-left table-header">
+            Test
+          </th>
+          <th class="text-left table-header">
+            Type 1 Diabetes
+          </th>
+          <th class="text-left table-header">
+            Type 2 Diabetes
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="item in typeTests"
+          :key="item.test"
+        >
+          <td class="pa-1">{{ item.test }}</td>
+          <td class="pa-1">{{ item.one }}</td>
+          <td class="pa-1">{{ item.two }}</td>
+        </tr>
+      </tbody>
+    </v-table>
+    <v-row>
+      <v-col>
+        <v-list density="compact" lines="two">
+          <v-list-subheader>C-Peptide</v-list-subheader>
+          <v-list-item v-for="(item, i) in cPeptide" :key="i">
+            <v-list-item-subtitle>{{ item.title }}</v-list-item-subtitle>
+          </v-list-item>
+        </v-list>
+      </v-col>
+      <v-divider vertical inset />
+      <v-col>
+        <v-list density="compact">
+          <v-list-subheader>GAD Antibodies</v-list-subheader>
+          <v-list-item v-for="(item, i) in gadAntibodies" :key="i">
+            <v-list-item-subtitle>{{ item.title }}</v-list-item-subtitle>
+          </v-list-item>
+        </v-list>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
+
+<style scoped>
+.table-header {
+  font-weight: 700;
+  font-size: large;
+}
+</style>

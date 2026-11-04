@@ -18,12 +18,12 @@ const testNotes = [
         Identifying Prediabetes
       </v-card-title>
       <v-table striped="odd" density="compact">
-        <thead>
+        <thead class="bg-primary">
           <tr>
-            <th class="text-left">
+            <th class="table-header">
               Test
             </th>
-            <th class="text-left">
+            <th class="table-header">
               Prediabetes
             </th>
           </tr>
@@ -47,3 +47,11 @@ const testNotes = [
     </v-card>
   </v-container>
 </template>
+
+<style scoped>
+.table-header {
+  font-weight: 700;
+  font-size: large;
+  text-align: left;
+}
+</style>
