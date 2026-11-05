@@ -1,7 +1,6 @@
 <script setup lang="ts">
 type CardProps = {
   title: string;
-  text?: string;
   variant?: "text" | "flat" | "elevated" | "outlined" | "plain" | "tonal" | undefined;
   color?: string;
 };
@@ -9,12 +8,16 @@ defineProps<CardProps>();
 </script>
 
 <template>
-  <v-card :color="color" :variant="variant">
-    <v-card-title class="font-weight-bold border-b-md text-wrap">
+  <v-card
+    :variant="variant ? variant : 'elevated'"
+    class="my-3 fill-height"
+  >
+    <v-card-title class="font-weight-bold text-primary text-wrap">
       {{ title }}
     </v-card-title>
+    <v-divider thickness="2" />
     <v-card-text class="mt-2">
-      {{ text }}
+      <slot />
     </v-card-text>
   </v-card>
 </template>
