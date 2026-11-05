@@ -48,7 +48,7 @@ const toggleIcon = computed(() => {
 
 function toggleTheme() {
   if (theme.current.value.dark) {
-    theme.change("myTheme");
+    theme.change("lightTheme");
   }
   else {
     theme.change("darkTheme");

@@ -2,19 +2,20 @@
 
 <template>
   <v-container class="w-75">
-    <div>
-      <h2 class="text-center">
+    <v-row>
+      <h1 class="mx-auto">
         Nutrient Metabolism
-      </h2>
-    </div>
-    <div class="d-flex justify-space-evenly">
+      </h1>
+    </v-row>
+    <v-row class="d-flex justify-space-evenly">
       <v-btn
         to="/digestion"
         rounded="lg"
         size="x-large"
         height="70"
         width="240"
-        color="primary"
+        color="secondary"
+        class="font-weight-bold"
       >
         Digestion
       </v-btn>
@@ -24,11 +25,56 @@
         size="x-large"
         height="70"
         width="240"
-        color="primary"
+        color="secondary"
+        class="font-weight-bold"
       >
         Absorption
       </v-btn>
-    </div>
+    </v-row>
+    <v-row>
+      <h2 class="mx-auto">Macronutrients</h2>
+    </v-row>
+    <v-row>
+      <v-col>
+        <v-btn
+          to="/carbohydrates"
+          rounded="lg"
+          size="x-large"
+          height="70"
+          width="240"
+          color="secondary"
+          class="font-weight-bold"
+        >
+          Carbohydrates
+        </v-btn>
+      </v-col>
+      <v-col>
+        <v-btn
+          to="/lipids"
+          rounded="lg"
+          size="x-large"
+          height="70"
+          width="240"
+          color="secondary"
+          class="font-weight-bold"
+        >
+          Lipids
+        </v-btn>
+      </v-col>
+      <v-col>
+        <v-btn
+          to="/protein"
+          rounded="lg"
+          size="x-large"
+          height="70"
+          width="240"
+          color="secondary"
+          class="font-weight-bold"
+        >
+          Protein
+        </v-btn>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
