@@ -1,9 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <h2 class="mx-auto">
-        The Science of Nutrition
-      </h2>
+      <h2 class="mx-auto text-primary">The Science of Nutrition</h2>
     </v-row>
     <v-card class="pa-2">
       <v-card-text>
@@ -13,27 +11,19 @@
       </v-card-text>
       <v-row class="my-4 mx-2">
         <v-col>
-          <v-btn
-            variant="elevated"
-            color="primary"
-            to="/study-tools"
-          >
+          <v-btn variant="elevated" color="secondary" to="/study-tools">
             Study Tools
           </v-btn>
         </v-col>
         <v-col>
-          <v-btn
-            variant="elevated"
-            color="primary"
-            to="/metabolism"
-          >
+          <v-btn variant="elevated" color="secondary" to="/metabolism">
             Nutrient Metabolism
           </v-btn>
         </v-col>
         <v-col>
           <v-btn
             variant="elevated"
-            color="primary"
+            color="secondary"
             to="nutritional-assessment"
           >
             Nutritional Assessment
