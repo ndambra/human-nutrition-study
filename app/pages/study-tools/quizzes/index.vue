@@ -18,7 +18,7 @@ function navigate(link: string) {
       <v-btn
         prepend-icon="mdi-chevron-left"
         variant="outlined"
-        color="primary"
+        color="secondary"
         to="/study-tools"
       >
         Back to Study Tools
@@ -33,7 +33,7 @@ function navigate(link: string) {
             <v-btn
               variant="elevated"
               rounded="xl"
-              color="primary"
+              color="secondary"
               @click="navigate(quiz.link)"
             >
               Study

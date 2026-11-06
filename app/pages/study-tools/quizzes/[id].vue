@@ -85,12 +85,12 @@ function nextQuestion() {
     <div class="d-flex justify-space-between mt-3">
       <v-btn
         variant="tonal"
-        color="primary"
+        color="secondary"
         @click="prevQuestion()"
       >
         Previous
       </v-btn>
-      <v-btn color="primary" @click="nextQuestion()">
+      <v-btn color="secondary" @click="nextQuestion()">
         Next
       </v-btn>
     </div>
